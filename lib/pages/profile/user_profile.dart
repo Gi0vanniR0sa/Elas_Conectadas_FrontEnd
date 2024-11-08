@@ -16,7 +16,7 @@ class _UserPageState extends State<UserPage> {
   final String avatarImagePath = 'assets/avatar.jpeg'; // Substitua pelo caminho da imagem do usuário
   final String phone = '43991575544'; // Substitua pelo número de telefone do usuário
 
- /* @override
+  /*@override
   void initState() {
     super.initState();
     checkUserStatus();
