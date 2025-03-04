@@ -5,12 +5,11 @@ class CustomFloatingActionButton extends StatelessWidget {
   final Widget destinationScreen;
   final bool isVisible;
 
-  const CustomFloatingActionButton({
-    Key? key,
-    required this.context,
-    required this.destinationScreen,
-    required this.isVisible
-  });
+  const CustomFloatingActionButton(
+      {super.key,
+      required this.context,
+      required this.destinationScreen,
+      required this.isVisible});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,8 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () async {
         await Navigator.push(
-          context, MaterialPageRoute(builder: (context) => destinationScreen),
+          context,
+          MaterialPageRoute(builder: (context) => destinationScreen),
         );
       },
       backgroundColor: Colors.purple,

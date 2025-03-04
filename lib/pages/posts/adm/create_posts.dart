@@ -24,46 +24,46 @@ class _PostCreationPageState extends State<PostCreationPage> {
   final PostService postService = PostService();
 
   void createPost() async {
-  String title = _titleController.text;
-  String content = _contentController.text;
+    String title = _titleController.text;
+    String content = _contentController.text;
 
-  if (title.isEmpty || content.isEmpty || _selectedType == null) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("Please fill in all fields.")),
+    if (title.isEmpty || content.isEmpty || _selectedType == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Please fill in all fields.")),
+      );
+      return;
+    }
+
+    int adminId = await getAdminId(); // Obtemos o ID do administrador logado
+
+    // Criação do post
+    Post newPost = Post(
+      title: title,
+      content: content,
+      type: _selectedType!,
+      admins: [
+        PostOnAdmins(adminId: adminId, postId: 0),
+      ],
     );
-    return;
+
+    try {
+      // Chama o serviço para criar o post e envia o novo post com os dados
+      await postService.createPost(newPost);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Post created successfully!")),
+      );
+      _titleController.clear();
+      _contentController.clear();
+      setState(() {
+        _selectedType = null;
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Failed to create post: $e")),
+      );
+    }
   }
-
-  int adminId = await getAdminId(); // Obtemos o ID do administrador logado
-
-  // Criação do post
-  Post newPost = Post(
-    title: title,
-    content: content,
-    type: _selectedType!,
-    admins: [
-      PostOnAdmins(adminId: adminId, postId: 0),
-    ],
-  );
-
-  try {
-    // Chama o serviço para criar o post e envia o novo post com os dados
-    await postService.createPost(newPost);
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Post created successfully!")),
-    );
-    _titleController.clear();
-    _contentController.clear();
-    setState(() {
-      _selectedType = null;
-    });
-  } catch (e) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("Failed to create post: $e")),
-    );
-  }
-}
 
   final Map<PostType, String> postTypeNames = {
     PostType.EVENT: "Eventos",
@@ -80,7 +80,6 @@ class _PostCreationPageState extends State<PostCreationPage> {
         ),
         appBar: AppBar(),
         widgets: const <Widget>[Icon(Icons.more_vert)],
-       
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -101,7 +100,8 @@ class _PostCreationPageState extends State<PostCreationPage> {
                 const SizedBox(height: 20.0),
                 CustomTextField(controller: _titleController, label: 'Título'),
                 const SizedBox(height: 10.0),
-                CustomTextField(controller: _contentController, label: 'Descrição'),
+                CustomTextField(
+                    controller: _contentController, label: 'Descrição'),
                 const SizedBox(height: 10.0),
                 Container(
                   decoration: BoxDecoration(
@@ -124,7 +124,7 @@ class _PostCreationPageState extends State<PostCreationPage> {
                         _selectedType = newType;
                       });
                     },
-                    underline: SizedBox(),
+                    underline: const SizedBox(),
                   ),
                 ),
                 const SizedBox(height: 20.0),

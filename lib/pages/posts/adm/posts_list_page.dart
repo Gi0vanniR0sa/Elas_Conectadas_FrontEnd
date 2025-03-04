@@ -6,7 +6,7 @@ import 'package:conectadas_app/widgets/posts/custom_floating_action_button.dart'
 import 'package:flutter/material.dart';
 
 class PostsListPage extends StatefulWidget {
-  const PostsListPage({Key? key}) : super(key: key);
+  const PostsListPage({super.key});
   @override
   State<PostsListPage> createState() => _PostsListPageState();
 }
@@ -68,9 +68,11 @@ class _PostsListPageState extends State<PostsListPage> {
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: _selectedPostType == type
-            ? const Color.fromARGB(255, 205, 165, 250) : Colors.white,
+            ? const Color.fromARGB(255, 205, 165, 250)
+            : Colors.white,
         foregroundColor: _selectedPostType == type
-            ? Colors.white : const Color.fromARGB(255, 205, 165, 250),
+            ? Colors.white
+            : const Color.fromARGB(255, 205, 165, 250),
       ),
       child: Text(postTypeLabels[type]!),
     );
@@ -94,9 +96,9 @@ class _PostsListPageState extends State<PostsListPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
                     //Paddin no topo da pagina
-                    const Row(mainAxisAlignment: MainAxisAlignment.end,
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
                           padding: EdgeInsets.only(right: 9.0, top: 9.0),
@@ -106,12 +108,11 @@ class _PostsListPageState extends State<PostsListPage> {
 
                     buildFilterRow(),
 
-                   /* CardItem(
+                    /* CardItem(
                       imgUrl: 'imgUrl', title: 'title',
                       desc: 'desc', displayText: 'displayText',
                       onTap: () {},
                     ),*/
-
                   ],
                 ),
               ),

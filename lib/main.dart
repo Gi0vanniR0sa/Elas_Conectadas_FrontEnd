@@ -7,14 +7,14 @@ Future<void> main() async {
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   runApp(MyApp(savedThemeMode: savedThemeMode));
 }
+
 class MyApp extends StatelessWidget {
   final AdaptiveThemeMode? savedThemeMode;
   const MyApp({super.key, this.savedThemeMode});
-  
+
   @override
   Widget build(BuildContext context) {
-
-  //Set o tema do app
+    //Set o tema do app
     return AdaptiveTheme(
       light: ThemeData(
         useMaterial3: true,
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       initial: savedThemeMode ?? AdaptiveThemeMode.light,
-  //
+      //
 
       builder: (theme, darkTheme) => MaterialApp(
         theme: theme,
@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: getRoutes(),
       ),
-      
     );
   }
 }

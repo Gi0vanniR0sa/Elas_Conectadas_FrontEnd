@@ -29,7 +29,7 @@ class _AdCreationPageState extends State<AdCreationPage> {
 
     if (title.isEmpty || content.isEmpty || _selectedType == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Please fill in all fields.")),
+        const SnackBar(content: Text("Please fill in all fields.")),
       );
       return;
     }
@@ -43,7 +43,7 @@ class _AdCreationPageState extends State<AdCreationPage> {
     try {
       await adService.createAds(newAd);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Ad created successfully!")),
+        const SnackBar(content: Text("Ad created successfully!")),
       );
       _titleController.clear();
       _contentController.clear();
@@ -60,15 +60,14 @@ class _AdCreationPageState extends State<AdCreationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppHeader(
-        title: const Text( ' ',
+        title: const Text(
+          ' ',
           style: TextStyle(color: Colors.white),
         ),
         appBar: AppBar(),
         widgets: const <Widget>[Icon(Icons.more_vert)],
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Card(
@@ -81,18 +80,16 @@ class _AdCreationPageState extends State<AdCreationPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-
                 const Text(
                   'Crie seu Anúncio',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 20.0),
-
                 CustomTextField(controller: _titleController, label: 'Título'),
                 const SizedBox(height: 10.0),
-                CustomTextField(controller: _contentController, label: 'Descrição'),
+                CustomTextField(
+                    controller: _contentController, label: 'Descrição'),
                 const SizedBox(height: 10.0),
-
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
@@ -114,10 +111,9 @@ class _AdCreationPageState extends State<AdCreationPage> {
                         _selectedType = newType;
                       });
                     },
-                    underline: SizedBox(),
+                    underline: const SizedBox(),
                   ),
                 ),
-
                 const SizedBox(height: 20.0),
                 CustomButton(text: "Criar", onPressed: createAd),
               ],

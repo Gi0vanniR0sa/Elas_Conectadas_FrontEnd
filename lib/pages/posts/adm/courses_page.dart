@@ -6,7 +6,6 @@ import 'package:conectadas_app/widgets/common/custom_header.dart';
 import 'package:conectadas_app/widgets/posts/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
-
 class CoursesPage extends StatefulWidget {
   const CoursesPage({super.key});
   @override
@@ -39,13 +38,14 @@ class _CoursesPageState extends State<CoursesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppHeader(
-        title: const Text('Cursos', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Cursos',
+          style: TextStyle(color: Colors.white),
+        ),
         appBar: AppBar(),
         widgets: const <Widget>[Icon(Icons.more_vert)],
       ),
-
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
@@ -53,26 +53,25 @@ class _CoursesPageState extends State<CoursesPage> {
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: const IntrinsicHeight(
                 child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.center,
-                 children: [
-
-                    Text('VAZIO', style: TextStyle(color: Colors.black),),
-                    
-                 ],
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'VAZIO',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
                 ),
               ),
             ),
           );
         },
       ),
-
       floatingActionButton: CustomFloatingActionButton(
         context: context,
         destinationScreen: const PostCreationPage(),
         isVisible: isButtonVisible,
       ),
-
-      bottomNavigationBar: AppBottomTabs(),
+      bottomNavigationBar: const AppBottomTabs(),
     );
   }
 }

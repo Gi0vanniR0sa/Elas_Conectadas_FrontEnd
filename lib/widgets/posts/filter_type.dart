@@ -5,7 +5,8 @@ class FilterRowWidget extends StatelessWidget {
   final String selectedStatus;
   final ValueChanged<String> onStatusChanged;
 
-  FilterRowWidget({
+  const FilterRowWidget({
+    super.key,
     required this.statuses,
     required this.selectedStatus,
     required this.onStatusChanged,
@@ -25,7 +26,7 @@ class FilterRowWidget extends StatelessWidget {
                       isSelected: selectedStatus == status,
                       onPressed: () => onStatusChanged(status),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                   ])
               .expand((widget) => widget)
               .toList()
@@ -41,7 +42,8 @@ class FilterButtonWidget extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onPressed;
 
-  FilterButtonWidget({
+  const FilterButtonWidget({
+    super.key,
     required this.status,
     required this.isSelected,
     required this.onPressed,
@@ -52,7 +54,8 @@ class FilterButtonWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: isSelected ? Colors.brown.shade400 : Colors.grey.shade300,
+        backgroundColor:
+            isSelected ? Colors.brown.shade400 : Colors.grey.shade300,
         foregroundColor: isSelected ? Colors.white : Colors.brown.shade900,
       ),
       child: Text(status),

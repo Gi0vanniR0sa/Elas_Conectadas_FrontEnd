@@ -9,15 +9,12 @@ import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> getRoutes() {
   return {
-    '/': (context) => SplashScreen(),
-    
+    '/': (context) => const SplashScreen(),
     '/auth': (context) => const LoginOrRegister(),
     '/profile': (context) => const UserPage(),
-    
     '/home': (context) => const HomePage(),
     '/posts': (context) => const PostsListPage(),
-
-    '/createads': (context) =>  const AdCreationPage(),
+    '/createads': (context) => const AdCreationPage(),
     '/createpost': (context) => const PostCreationPage(),
   };
 }

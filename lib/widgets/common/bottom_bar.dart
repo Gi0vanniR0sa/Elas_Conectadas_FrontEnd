@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppBottomTabs extends StatelessWidget {
-  AppBottomTabs({super.key});
+  const AppBottomTabs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +12,20 @@ class AppBottomTabs extends StatelessWidget {
         children: [
           IconButton(
             icon: const Icon(Icons.home, color: Colors.white),
-            onPressed: () =>  Navigator.pushReplacementNamed(context, '/'),
+            onPressed: () => Navigator.pushReplacementNamed(context, '/'),
           ),
           IconButton(
             icon: const Icon(Icons.event, color: Colors.white),
-            onPressed: () =>  Navigator.pushReplacementNamed(context, '/posts'),
+            onPressed: () => Navigator.pushReplacementNamed(context, '/posts'),
           ),
           IconButton(
             icon: const Icon(Icons.book, color: Colors.white),
-            onPressed: () =>  Navigator.pushReplacementNamed(context, '/posts'),
+            onPressed: () => Navigator.pushReplacementNamed(context, '/posts'),
           ),
           IconButton(
             icon: const Icon(Icons.person, color: Colors.white),
-            onPressed: () =>  Navigator.pushReplacementNamed(context, '/profile'),
+            onPressed: () =>
+                Navigator.pushReplacementNamed(context, '/profile'),
           ),
         ],
       ),

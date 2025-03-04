@@ -24,18 +24,20 @@ class _HomePageState extends State<HomePage> {
     isButtonVisible = true;
   };*/
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppHeader(
-        title: const Text('Home', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Home',
+          style: TextStyle(color: Colors.white),
+        ),
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () { Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
         widgets: const [],
@@ -65,7 +67,6 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: TabBarView(
                 children: <Widget>[
-
                   //TAB DE PRODUTOS
                   SingleChildScrollView(
                     child: Column(
@@ -76,9 +77,11 @@ class _HomePageState extends State<HomePage> {
                           desc: 'Sandália de Couro',
                           displayText: '99,00',
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const AdsPage(),
-                            ),);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const AdsPage(),
+                              ),
+                            );
                           },
                         ),
                       ],
@@ -95,9 +98,11 @@ class _HomePageState extends State<HomePage> {
                           desc: 'Bolos para festas',
                           displayText: '**',
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const AdsPage(),
-                            ),);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const AdsPage(),
+                              ),
+                            );
                           },
                         ),
                       ],
@@ -114,15 +119,16 @@ class _HomePageState extends State<HomePage> {
                           desc: ' ',
                           displayText: '**',
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
                                 builder: (context) => const AdsPage(),
-                            ),);
+                              ),
+                            );
                           },
                         ),
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -139,7 +145,7 @@ class _HomePageState extends State<HomePage> {
             )
           : null,
 
-      bottomNavigationBar: AppBottomTabs(),
+      bottomNavigationBar: const AppBottomTabs(),
     );
   }
 }
