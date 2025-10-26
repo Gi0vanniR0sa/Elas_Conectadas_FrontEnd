@@ -1,4 +1,5 @@
 import 'package:conectadas_app/pages/profile/conectar_button.dart';
+import 'package:conectadas_app/service/shared_service.dart';
 import 'package:conectadas_app/widgets/common/bottom_bar.dart';
 import 'package:conectadas_app/widgets/common/custom_header.dart';
 import 'package:conectadas_app/widgets/common/logout_button.dart';

@@ -14,7 +14,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     required this.appBar,
     required this.widgets,
-    this.backgroundColor = const Color.fromARGB(255, 59, 15, 108),
+    this.backgroundColor = const Color(0xFF6441a5),
     this.showBackButton = true, // Make the back button optional
   });
 

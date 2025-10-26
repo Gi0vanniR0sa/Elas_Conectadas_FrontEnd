@@ -1,0 +1,5 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "editor.fontSize": 16,
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

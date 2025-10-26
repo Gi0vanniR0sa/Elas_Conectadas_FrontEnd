@@ -54,6 +54,7 @@ class CustomTextField extends StatelessWidget {
         ),
         suffixIcon: suffixIcon,
       ),
+      validator: validator,
      // validator: isEmail ? _emailValidator : validator,
     );
   }

@@ -12,21 +12,24 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkLoginStatus();
+    });
     checkLoginStatus();
   }
 
-  Future<void> checkLoginStatus() async {
-    final prefs = await SharedPreferences.getInstance();
-    final token = prefs.getString('access_token');
+Future<void> checkLoginStatus() async {
+  final prefs = await SharedPreferences.getInstance();
+  //final token = prefs.getString('access_token');
+  final token = await prefs.remove('acess_token');
 
-    if (token != null) {
-      // Usuário está logado, redirecionar para o perfil
-      Navigator.pushReplacementNamed(context, '/profile');
-    } else {
-      // Usuário não está logado, redirecionar para a tela de login
-      Navigator.pushReplacementNamed(context, '/home');
-    }
+  if (token != null) {
+    Navigator.pushReplacementNamed(context, '/auth');
+  } else {
+    Navigator.pushReplacementNamed(context, '/home');
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

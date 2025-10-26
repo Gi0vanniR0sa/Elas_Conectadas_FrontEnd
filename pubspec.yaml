@@ -23,6 +23,14 @@ dependencies:
   shared_preferences: ^2.2.3
   extended_text: ^5.0.0
   go_router: ^14.4.1
+  api_cache_manager: ^1.0.2
+  device_info_plus: ^12.1.0
+  lottie: ^3.3.2
+  animated_splash_screen: ^1.3.0
+  quickalert: ^1.1.0
+  vector_graphics: ^1.1.19
+  vector_graphics_compiler: ^1.1.19
+
 
 dev_dependencies:
   flutter_test:
@@ -30,8 +38,8 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_launcher_icons: ^0.13.1
   build_runner: ^2.4.15
-  floor_generator: ^1.5.0
   retrofit_generator: ^9.1.9
+
 
 flutter_launcher_icons:
   android: true
@@ -42,10 +50,24 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
-    #images/
+    - assets/images/
+    - assets/images/Elas_Conectadas_White_Letters-cropped.svg
+    - assets/images/Elas_Conectadas_White_Letters-cropped.vec
+    - assets/animations/
 
-#  fonts:
-#    - family: Roboto
-#      fonts:
-#        - asset: assets/fonts/Roboto-Regular.ttf
+  fonts:
+    - family: INTER_18PT
+      fonts:
+        - asset: assets/fonts/INTER_18PT-LIGHT.TTF
+          weight: 300
+        - asset: assets/fonts/INTER_18PT-REGULAR.TTF
+          weight: 400
+        - asset: assets/fonts/INTER_18PT-MEDIUM.TTF
+          weight: 500
+
+    - family: POPPINS
+      fonts: 
+        - asset: assets/fonts/POPPINS-REGULAR.TTF
+          weight: 400
+        - asset: assets/fonts/POPPINS-BOLD.TTF
+          weight: 700 

@@ -1,8 +1,11 @@
 import 'package:conectadas_app/service/auth_service.dart';
+import 'package:conectadas_app/service/shared_service.dart';
 import 'package:flutter/material.dart';
 
 class LogoutButton extends StatelessWidget {
-  const LogoutButton({super.key});
+  final Future<void> Function()? onPressed;
+
+  const LogoutButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -10,16 +13,18 @@ class LogoutButton extends StatelessWidget {
       icon: const Icon(Icons.exit_to_app),
       tooltip: 'Logout',
       onPressed: () async {
-        await _handleLogout(context);
+        if (onPressed != null) {
+          await onPressed!();
+        } else {
+          // Comportamento padrão: logout e redireciona para login
+          await _handleLogout(context);
+        }
       },
     );
   }
 
   Future<void> _handleLogout(BuildContext context) async {
-    //final authService = AuthService();
-    await AuthService.logout();
-
-    // Redireciona para a tela de home/remover histórico de navegação
-    Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+    await SharedService.logoutAndRedirect(context);
   }
 }
+

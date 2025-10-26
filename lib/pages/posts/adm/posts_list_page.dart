@@ -1,9 +1,11 @@
 import 'package:conectadas_app/pages/posts/adm/create_posts.dart';
 import 'package:conectadas_app/service/auth_service.dart';
 import 'package:conectadas_app/utils/model_post.dart';
+import 'package:conectadas_app/widgets/common/custom_dialog.dart';
 import 'package:conectadas_app/widgets/common/custom_header.dart';
 import 'package:conectadas_app/widgets/posts/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
+import 'package:conectadas_app/widgets/common/custom_dialog.dart';
 
 class PostsListPage extends StatefulWidget {
   const PostsListPage({super.key});

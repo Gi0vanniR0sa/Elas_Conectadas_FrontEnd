@@ -72,10 +72,10 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         CardItem(
-                          imgUrl: 'assets/placeholder7.jpg',
+                          imgUrl: 'assets/images/placeholder7.jpg',
                           title: 'Sandália',
                           desc: 'Sandália de Couro',
-                          displayText: '99,00',
+                          price: 'R\$ 99,90',
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -96,7 +96,6 @@ class _HomePageState extends State<HomePage> {
                           imgUrl: 'assets/placeholder05.jpg',
                           title: 'Boleira',
                           desc: 'Bolos para festas',
-                          displayText: '**',
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -104,6 +103,16 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           },
+                        ),
+                        CardItem(
+                          imgUrl: 'assets/placeholder10.jpg',
+                          title: 'Lembrancinhas', 
+                          desc: 'Lembrancinhas para maternidade safari', 
+                          onTap: () {
+                            MaterialPageRoute(
+                              builder: (context) => const AdsPage(), 
+                            );
+                          }
                         ),
                       ],
                     ),
@@ -117,7 +126,6 @@ class _HomePageState extends State<HomePage> {
                           imgUrl: 'assets/icon0.jpg',
                           title: ' ',
                           desc: ' ',
-                          displayText: '**',
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(

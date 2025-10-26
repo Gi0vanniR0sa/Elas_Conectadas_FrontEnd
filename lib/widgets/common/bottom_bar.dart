@@ -6,7 +6,7 @@ class AppBottomTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: const Color.fromARGB(255, 59, 15, 108),
+      color: const Color(0xFF6441a5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

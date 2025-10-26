@@ -1,0 +1,2 @@
+C:/Users/User/Documents/UENP - Elas Conecta 2/Front-End/conectadas_app/android/app/.cxx/RelWithDebInfo/4635x1w2/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/UENP - Elas Conecta 2/Front-End/conectadas_app/android/app/.cxx/RelWithDebInfo/4635x1w2/arm64-v8a/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,5 @@
+import 'package:conectadas_app/pages/auth/login.dart';
+import 'package:conectadas_app/pages/auth/verifyotp.dart';
 import 'package:conectadas_app/pages/home_page.dart';
 import 'package:conectadas_app/pages/posts/adm/create_posts.dart';
 import 'package:conectadas_app/pages/posts/adm/posts_list_page.dart';
@@ -6,11 +8,13 @@ import 'package:conectadas_app/pages/profile/user_profile.dart';
 import 'package:conectadas_app/service/login_or_register.dart';
 import 'package:conectadas_app/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 
 Map<String, WidgetBuilder> getRoutes() {
   return {
-    '/': (context) => const SplashScreen(),
+    //'/': (context) => const SplashScreen(),
     '/auth': (context) => const LoginOrRegister(),
+    '/login': (context) => const LoginPage(),
     '/profile': (context) => const UserPage(),
     '/home': (context) => const HomePage(),
     '/posts': (context) => const PostsListPage(),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final Function onPressed;
+  final void Function()? onPressed;
 
   const CustomButton({super.key, required this.text, required this.onPressed});
 
@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           side: const BorderSide(color: Color.fromARGB(255, 205, 165, 250), width: 2),
         ),
-        onPressed: () => onPressed(),
+        onPressed: onPressed,
         child: Text(text,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
