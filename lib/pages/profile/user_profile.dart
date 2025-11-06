@@ -1,5 +1,4 @@
 import 'package:conectadas_app/pages/profile/conectar_button.dart';
-import 'package:conectadas_app/service/shared_service.dart';
 import 'package:conectadas_app/widgets/common/bottom_bar.dart';
 import 'package:conectadas_app/widgets/common/custom_header.dart';
 import 'package:conectadas_app/widgets/common/logout_button.dart';
@@ -16,7 +15,7 @@ class _UserPageState extends State<UserPage> {
   final String userOccupation =
       'Crocheteira'; // Substitua pela ocupação do usuário
   final String avatarImagePath =
-      'assets/avatar.jpeg'; // Substitua pelo caminho da imagem do usuário
+      'assets/images/avatar.jpeg'; // Substitua pelo caminho da imagem do usuário
   final String phone =
       '43991575544'; // Substitua pelo número de telefone do usuário
 
@@ -67,17 +66,17 @@ class _UserPageState extends State<UserPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const CircleAvatar(
+                      CircleAvatar(
                         radius: 50,
-                        //backgroundImage: AssetImage(avatarImagePath),
+                        backgroundImage: AssetImage(avatarImagePath),
                       ),
                       const Text(
-                        "name",
+                        "Ana Maria",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       const Text(
-                        "userOccupation",
+                        "Crocheteira",
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                       const SizedBox(height: 10),

@@ -6,11 +6,9 @@ import 'package:conectadas_app/models/login_response_model.dart';
 import 'package:conectadas_app/pages/auth/register.dart';
 import 'package:conectadas_app/pages/home_page.dart';
 import 'package:conectadas_app/service/api_service.dart';
-import 'package:conectadas_app/service/login_or_register.dart';
 import 'package:conectadas_app/widgets/auth/custom_textfield.dart';
 import 'package:conectadas_app/widgets/common/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback? onTap;
