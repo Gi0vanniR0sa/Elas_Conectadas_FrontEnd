@@ -84,6 +84,50 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                         ),
+                        CardItem(
+                          imgUrl: 'assets/images/placeholder09.jpg',
+                          title: 'Colete de Crochê', 
+                          desc: 'Lindo colete de crochê feminino', 
+                          price: 'R\$ 159,90',
+                          onTap: () {
+                            MaterialPageRoute(
+                              builder: (context) => const AdsPage(), 
+                            );
+                          }
+                        ),
+                        CardItem(
+                          imgUrl: 'assets/images/placeholder12.jpg',
+                          title: 'Bolsa', 
+                          desc: 'Bolsa de tecido com forro', 
+                          price: 'R\$ 179,90',
+                          onTap: () {
+                            MaterialPageRoute(
+                              builder: (context) => const AdsPage(), 
+                            );
+                          }
+                        ),
+                        CardItem(
+                          imgUrl: 'assets/images/placeholder11.jpg',
+                          title: 'Caneca', 
+                          desc: 'Caneca personalizada lhama', 
+                          price: 'R\$ 59,90',
+                          onTap: () {
+                            MaterialPageRoute(
+                              builder: (context) => const AdsPage(), 
+                            );
+                          }
+                        ),
+                        CardItem(
+                          imgUrl: 'assets/images/placeholder13.jpg',
+                          title: 'Colar', 
+                          desc: 'Caneca personalizada lhama', 
+                          price: 'R\$ 99,90',
+                          onTap: () {
+                            MaterialPageRoute(
+                              builder: (context) => const AdsPage(), 
+                            );
+                          }
+                        ),
                       ],
                     ),
                   ),

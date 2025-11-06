@@ -15,10 +15,6 @@ class AppBottomTabs extends StatelessWidget {
             onPressed: () => Navigator.pushReplacementNamed(context, '/'),
           ),
           IconButton(
-            icon: const Icon(Icons.event, color: Colors.white),
-            onPressed: () => Navigator.pushReplacementNamed(context, '/posts'),
-          ),
-          IconButton(
             icon: const Icon(Icons.book, color: Colors.white),
             onPressed: () => Navigator.pushReplacementNamed(context, '/posts'),
           ),
